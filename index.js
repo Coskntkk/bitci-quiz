@@ -47,7 +47,7 @@ let data = [
         "Tablosu": "https:\/\/i.hizliresim.com\/7f8hr1l.jpg"
     },
     {
-        "KanalAdı": "EasterGamersTv",
+        "KanalAdı": "EasterGamers",
         "Takipçi": 354486,
         "THK": 14052,
         "Durumu": "Haberim Yok",
