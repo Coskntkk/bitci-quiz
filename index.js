@@ -2372,7 +2372,7 @@ const setQuestion = () => {
     currentItem = data[index];
     let username = currentItem.KanalAdı
     sName.innerText = username
-    img.src = `images/${username}.${extensions[username.toLowerCase()]}`
+    img.src = `https://raw.githubusercontent.com/Coskntkk/bitci-quiz/main/images/${username}.${extensions[username.toLowerCase()]}`
     index ++
 }
 
