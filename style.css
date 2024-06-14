@@ -15,7 +15,7 @@ body,
 }
 
 .card {
-    border: 1px solid red;
+    border: 1px solid gray;
     border-radius: 1rem;
     width: 70%;
     background-color: white;

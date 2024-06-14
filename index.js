@@ -1,4 +1,4 @@
-const data = [
+let data = [
     {
         "KanalAdı": "Rammus53",
         "Takipçi": 1162527,
@@ -2264,6 +2264,85 @@ const data = [
         "Tablosu": "https:\/\/i.hizliresim.com\/526cu3t."
     }
 ]
+const extensions = {
+    "medyalab": "jpg",
+    "gunes": "png",
+    "refl7ction": "jpg",
+    "ayuhere": "jpg",
+    "imhardman": "jpg",
+    "akagreenn": "jpg",
+    "tayfunbyc": "jpg",
+    "theokoles": "jpg",
+    "nisay": "jpg",
+    "zeynapple": "jpg",
+    "legoo": "jpg",
+    "sonkomanci": "jpg",
+    "didem": "jpg",
+    "thesorika": "jpg",
+    "06labidur": "jpg",
+    "patcutez": "jpg",
+    "cacarov": "jpg",
+    "lunaspia": "png",
+    "1st3nm1": "jpg",
+    "canoskixd": "png",
+    "morg_live": "png",
+    "logicmanvlr": "jpg",
+    "pwnage": "jpeg",
+    "zekanz": "jpg",
+    "rammus53": "jpg",
+    "panky": "jpg",
+    "f4kanzy": "jpg",
+    "sismanrambo": "jpg",
+    "cned": "jpg",
+    "kerimhan": "webp",
+    "kocakar\u0131ansiklopedisi": "jpg",
+    "gurbeyahmedov": "jpg",
+    "zkra": "png",
+    "luxmira": "jpg",
+    "feitv": "jpg",
+    "madzzy": "jpg",
+    "figonatci": "jpg",
+    "miranda": "jpg",
+    "farewell": "jpg",
+    "cansuiv": "png",
+    "kuzuur": "jpeg",
+    "roccodota": "avif",
+    "nickedbow": "jpg",
+    "wandayss": "jpg",
+    "mikyas59": "jpg",
+    "queensiar": "jpg",
+    "lahzaa": "png",
+    "civcivv": "jpg",
+    "nefer": "jpg",
+    "edamilka": "jpg",
+    "xnoverhd": "png",
+    "skyladdo": "png",
+    "tunamelih": "jpeg",
+    "perihanim": "png",
+    "melinnahosk": "jpeg",
+    "mihrapunal": "png",
+    "eastergamers": "jpg",
+    "foxvelox": "jpg",
+    "makhwelo": "jpg",
+    "anakiinn": "jpg",
+    "kuzigang": "jpg",
+    "lurzy0y0": "jpg",
+    "madnesstr": "png",
+    "jaxres": "jpg",
+    "berfish": "jpg",
+    "tecone": "jpg",
+    "oyunfatihi": "jpg",
+    "kedibirii": "png",
+    "japone": "jpg",
+    "rasney": "png",
+    "okancekic": "jpg",
+    "odisnos": "jpg",
+    "madammcc": "jpg",
+    "lakhesis": "png",
+    "flavorr": "jpg",
+    "nurfdn": "jpeg",
+    "ruvelius": "jpg"
+}
 const buttons = {
     a: document.getElementById("a"),
     b: document.getElementById("b"),
@@ -2276,6 +2355,7 @@ const ans = {
     "Red": buttons.c,
     "İtiraf": buttons.d
 }
+let index = 0;
 const green = "#50C878"
 const red = "#FF4433"
 const gray = ""
@@ -2289,8 +2369,11 @@ const fcount = document.getElementById("fcount")
 
 let currentItem = {}
 const setQuestion = () => {
-    currentItem = data[Math.floor(Math.random() * data.length)];
-    sName.innerText = currentItem.KanalAdı
+    currentItem = data[index];
+    let username = currentItem.KanalAdı
+    sName.innerText = username
+    img.src = `images/${username}.${extensions[username.toLowerCase()]}`
+    index ++
 }
 
 const selectX = (selection, id) => {
@@ -2318,5 +2401,17 @@ const nextQuestion = () => {
     next.disabled = true
 }
 
-setQuestion()
+function shuffle(array) {
+    array = data.filter((item) => extensions[item.KanalAdı.toLowerCase()])
+    let currentIndex = array.length;
+    while (currentIndex != 0) {
+        let randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+        [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+    }
+    data = array
+}
 
+shuffle(data)
+setQuestion()
