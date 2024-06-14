@@ -2326,7 +2326,7 @@ const extensions = {
     "makhwelo": "jpg",
     "anakiinn": "jpg",
     "kuzigang": "jpg",
-    "lurzy0y0": "jpg",
+    "lurzy0y0": "jpeg",
     "madnesstr": "png",
     "jaxres": "jpg",
     "berfish": "jpg",
