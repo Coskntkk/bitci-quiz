@@ -43,6 +43,10 @@ button {
 #name {
     margin-bottom: 0;
 }
+
+a {
+    font-size: smaller;
+}
 /* CSS media query for mobile devices */
 @media only screen and (max-width: 767px) {
     button {
